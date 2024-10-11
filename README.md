@@ -61,6 +61,44 @@ bun dev
 
 ```
 
+## 拦截路由
+拦截路由：可以在软导航（编程跳转）的时候不必进入新页面，直接在当前页面展示，但是在刷新浏览器的时候直接展示新页面详情页
+常用的方式有：
+1、直接在当前页面弹窗登录，在刷新页面的时候展示登录页面
+2、直接在当前产品列表页面弹窗显示商品大图，在刷新页面的时候展示商品详情页面
+
+以弹窗路由为例子 
+1、当前页面路径为 /app/list;弹窗详情的路径为 /app/detail/[id]
+**那么拦截路由的约定定义为(..)**
+若弹窗详情的路径为 /app/list/detail/[id]，为同级路由
+**那么拦截路由的约定定义为(.)**
+
+若是嵌套多层不同级直接使用(...)，使用(..)(..)会容易匹配不对
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
