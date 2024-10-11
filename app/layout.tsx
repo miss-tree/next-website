@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Suspense } from 'react'
 import localFont from "next/font/local";
 import { NavigationEvents } from './components/navigation-events'
+import Loading from './components/loading'
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,8 +25,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  team,
+  analytics,
 }: Readonly<{
   children: React.ReactNode;
+  analytics: React.ReactNode;
+  team: React.ReactNode;
 }>) {
   return (
     // suppressHydrationWarning 去除警告 出现警告的原因可能是浏览器的插件冲突
@@ -35,8 +41,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="max-w-min m-auto">
+          <div className="flex justify-items-center justify-around">
+            <Link href="/" className="font-bold">home</Link>
+            <Link href="/visitor" className="font-bold">visitor</Link>
+          </div>
+          <div className="flex justify-items-center w-500">
+            {team}
+            {analytics}
+          </div>
+        </div>
         {children}
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loading/>}>
           <NavigationEvents />
         </Suspense>
       </body>
