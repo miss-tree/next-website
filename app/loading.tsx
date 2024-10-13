@@ -2,7 +2,7 @@
  * @Author: miss-tree
  * @Date: 2024-10-11 11:14:24
  */
-import "./index.css"
+import "./loading.css"
 
 export default function Loading() {
 	return (

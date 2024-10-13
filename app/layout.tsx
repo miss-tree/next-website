@@ -41,7 +41,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="max-w-min m-auto">
+        {/* <div className="max-w-min m-auto">
           <div className="flex justify-items-center justify-around">
             <Link href="/" className="font-bold">home</Link>
             <Link href="/visitor" className="font-bold">visitor</Link>
@@ -50,7 +50,7 @@ export default function RootLayout({
             {team}
             {analytics}
           </div>
-        </div>
+        </div> */}
         {children}
         <Suspense fallback={<Loading/>}>
           <NavigationEvents />

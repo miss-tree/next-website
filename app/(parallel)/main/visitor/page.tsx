@@ -6,6 +6,6 @@
 export default function Page () {
 
   return (<div className="w-[600px] h-20 bg-fuchsia-500 rounded-xl leading-[70px]">
-   @visitor link content
+   @visitor link content++++
   </div>)
 }
